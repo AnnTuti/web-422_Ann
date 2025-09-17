@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studenikina</title>
+    <link rel="stylesheet" href="buttons.css">
+</head>
+<body>
+    <a href="https://flor2u.ru/images/uploads/conversion/94b/94bed21744592d2e44fa6f76572d0cc8/94bed21744592d2e44fa6f76572d0cc8-large.jpg" 
+       class="button" target="_blank">Цветок 1</a>
+
+    <a href="https://flor2u.ru/images/uploads/conversion/f5d/f5d3ac70fe911431c8e5f18d53f8ea1d/f5d3ac70fe911431c8e5f18d53f8ea1d-large.jpg" 
+       class="button" target="_blank">Цветок 2</a>
+
+    <a href="https://flor2u.ru/images/uploads/conversion/290/290833598c782165b80eb499b9e828dc/290833598c782165b80eb499b9e828dc-large.jpg" 
+       class="button" target="_blank">Цветок 3</a>
+</body>
+</html>
