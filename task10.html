@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Конвертер: Шестнадцатеричное → Десятичное</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .converter {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="converter">
+        <h2>Конвертер чисел</h2>
+        
+        <label for="hexInput">Введите шестнадцатеричное число:</label>
+        <input type="text" id="hexInput" placeholder="Например: 1A, FF, 2F">
+
+        <button onclick="convertHexToDecimal()">Конвертировать в десятичное</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function convertHexToDecimal() {
+            const hex = document.getElementById('hexInput').value.trim();
+            const resultDiv = document.getElementById('result');
+
+            try {
+                if (!/^[0-9A-Fa-f]+$/.test(hex)) {
+                    throw new Error("Ошибка: введите корректное шестнадцатеричное число.");
+                }
+
+                const decimal = parseInt(hex, 16);
+                resultDiv.textContent = "Десятичное представление: " + decimal;
+            } catch (error) {
+                resultDiv.textContent = error.message;
+            }
+        }
+    </script>
+</body>
+</html>
