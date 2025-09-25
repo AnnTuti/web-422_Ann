@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Конвертер: Двоичное ⇄ Шестнадцатеричное</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .converter {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="converter">
+        <h2>Конвертер чисел</h2>
+        
+        <label for="operation">Выберите операцию:</label>
+        <select id="operation">
+            <option value="binToHex">Двоичное → Шестнадцатеричное</option>
+            <option value="hexToBin">Шестнадцатеричное → Двоичное</option>
+        </select>
+
+        <label for="inputValue">Введите число:</label>
+        <input type="text" id="inputValue" placeholder="Например: 1010 или 1F">
+
+        <button onclick="convert()">Конвертировать</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function convert() {
+            const operation = document.getElementById('operation').value;
+            const input = document.getElementById('inputValue').value.trim();
+            const resultDiv = document.getElementById('result');
+
+            try {
+                if (operation === 'binToHex') {
+                    // Проверка: только 0 и 1
+                    if (!/^[01]+$/.test(input)) {
+                        throw new Error("Ошибка: введите корректное двоичное число.");
+                    }
+                    const decimal = parseInt(input, 2);
+                    const hex = decimal.toString(16).toUpperCase();
+                    resultDiv.textContent = "Шестнадцатеричное представление: " + hex;
+                } else if (operation === 'hexToBin') {
+                    // Проверка: только допустимые символы шестнадцатеричной системы
+                    if (!/^[0-9A-Fa-f]+$/.test(input)) {
+                        throw new Error("Ошибка: введите корректное шестнадцатеричное число.");
+                    }
+                    const decimal = parseInt(input, 16);
+                    const binary = decimal.toString(2);
+                    resultDiv.textContent = "Двоичное представление: " + binary;
+                }
+            } catch (error) {
+                resultDiv.textContent = error.message;
+            }
+        }
+    </script>
+</body>
+</html>
