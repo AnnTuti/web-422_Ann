@@ -1,30 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Котики</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заказ пиццы</title>
+  <style>
+    /* Общие стили */
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f9f9f9, #ffe6cc);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      margin-top: 40px;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      width: 350px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .container:hover {
+      transform: translateY(-3px);
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 22px;
+      color: #d35400;
+    }
+
+    /* Форма */
+    form {
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+      margin-bottom: 15px;
+      transition: 0.2s;
+    }
+
+    input[type="text"]:focus {
+      border-color: #d35400;
+      box-shadow: 0 0 6px rgba(211, 84, 0, 0.3);
+    }
+
+    button {
+      background: #d35400;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #e67e22;
+    }
+
+    /* Список заказов */
+    .orders {
+      text-align: left;
+    }
+
+    .orders p {
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #444;
+    }
+
+    .orders ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .orders li {
+      background: #ffe6cc;
+      margin-bottom: 8px;
+      padding: 10px;
+      border-radius: 8px;
+      color: #333;
+      font-size: 15px;
+      transition: 0.2s;
+    }
+
+    .orders li:hover {
+      background: #ffd1a3;
+    }
+  </style>
 </head>
 <body>
-    <div>
-        <h1>Котики — лучшие друзья человека!</h1>
-        <h2>Почему мы любим котов?</h2>
-        <p>Коты — это <b>пушистые</b>, <i>мягкие</i> и очень <b><i>забавные</i></b> животные. Они умеют мурлыкать и делать наш день лучше.</p>
+  <div class="container">
+    <h1>🍕 Заказ пиццы</h1>
 
-        <h3>Интересные факты</h3>
-        <ul>
-            <li>Коты спят до 16 часов в день</li>
-            <li>У них отличное ночное зрение</li>
-            <li>Кот может запомнить до 100 слов</li>
-        </ul>
+    <form>
+      <label for="name">Название пиццы</label>
+      <input type="text" placeholder="Например: Маргарита" id="name">
+      <button id="add">Добавить</button>
+    </form>
 
-        <h4>Вот фото милого котика:</h4>
-        <img src="https://placecats.com/300/200" alt="Милый котик">
-
-        <h5>Где найти больше котиков?</h5>
-        <p>Перейди по ссылке: <a href="https://www.youtube.com/results?search_query=cute+cats" target="_blank">Видео с котиками</a></p>
-
-        <h6><small>Помни: кот — это не игрушка, а живое существо!</small></h6>
+    <div class="orders">
+      <p>📋 Заказы</p>
+      <ul>
+        <li>Четыре сезона</li>
+      </ul>
     </div>
+  </div>
 </body>
 </html>
